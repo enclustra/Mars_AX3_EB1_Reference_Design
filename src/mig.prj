@@ -94,7 +94,7 @@
             <Pin PADName="P17(MRCC_P)" Bank="14" name="sys_clk_i" />
         </System_Clock>
         <System_Control>
-            <Pin PADName="No connect" Bank="Select Bank" name="sys_rst" />
+            <Pin PADName="N15(SRCC_P)" Bank="14" name="sys_rst_i" />
             <Pin PADName="No connect" Bank="Select Bank" name="init_calib_complete" />
             <Pin PADName="No connect" Bank="Select Bank" name="tg_compare_error" />
         </System_Control>
@@ -125,7 +125,7 @@
         <AXIParameters>
             <C0_C_RD_WR_ARB_ALGORITHM>RD_PRI_REG</C0_C_RD_WR_ARB_ALGORITHM>
             <C0_S_AXI_ADDR_WIDTH>28</C0_S_AXI_ADDR_WIDTH>
-            <C0_S_AXI_DATA_WIDTH>32</C0_S_AXI_DATA_WIDTH>
+            <C0_S_AXI_DATA_WIDTH>64</C0_S_AXI_DATA_WIDTH>
             <C0_S_AXI_ID_WIDTH>3</C0_S_AXI_ID_WIDTH>
             <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>
         </AXIParameters>

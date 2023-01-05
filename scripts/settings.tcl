@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------------
-# Copyright (c) 2021 by Enclustra GmbH, Switzerland.
+# Copyright (c) 2022 by Enclustra GmbH, Switzerland.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this hardware, software, firmware, and associated documentation files (the
@@ -26,7 +26,7 @@
 # MA-AX3-100-2I-D8
 # MA-AX3-35-1I-D8-ETH
 # MA-AX3-50-1I-D8-ETH
-# MA-AX3-100-2I-D8_ETH
+# MA-AX3-100-2I-D8-ETH
 
 # ----------------------------------------------------------------------------------
 # Modify this variable to select your module
@@ -42,19 +42,20 @@ if {![info exists baseboard]}   {set baseboard EB1}
 if {[lindex $argv 0] != ""} { set module_name [lindex $argv 0] }
 
 set module Mars_AX3
+set family artix
 
 switch $module_name {
   MA-AX3-35-1I-D8 {
     set part xc7a35tcsg324-1 
-    set ETH None
+    set ETH No_ETH
   }
   MA-AX3-50-1I-D8 {
     set part xc7a50tcsg324-1 
-    set ETH None
+    set ETH No_ETH
   }
   MA-AX3-100-2I-D8 {
     set part xc7a100tcsg324-2 
-    set ETH None
+    set ETH No_ETH
   }
   MA-AX3-35-1I-D8-ETH {
     set part xc7a35tcsg324-1 
@@ -64,7 +65,7 @@ switch $module_name {
     set part xc7a50tcsg324-1 
     set ETH ETH
   }
-  MA-AX3-100-2I-D8_ETH {
+  MA-AX3-100-2I-D8-ETH {
     set part xc7a100tcsg324-2 
     set ETH ETH
   }
@@ -79,7 +80,6 @@ if {![info exists project_name]} {
   set project_name ${module}
   if {[info exists baseboard]} {
     lappend project_name ${baseboard}
-    puts $project_name
   }
   set project_name [string map {" " "_"} "${project_name}"]
 }
